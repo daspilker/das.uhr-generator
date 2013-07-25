@@ -1,0 +1,9 @@
+*~
+*.svg
+.idea/
+*.iml
+.settings/
+.project
+.classpath
+.gradle/
+build/

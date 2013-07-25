@@ -1,0 +1,21 @@
+defaultTasks 'run'
+
+apply plugin: 'java'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.apache.xmlgraphics:batik-svg-dom:1.7'
+    compile 'org.apache.xmlgraphics:batik-svggen:1.7'
+}
+
+task run(type: JavaExec, dependsOn: classes) {
+    main 'com.daspilker.uhr.svggenerator.Main'
+    classpath sourceSets.main.runtimeClasspath
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion '1.6'
+}
